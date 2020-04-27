@@ -1,0 +1,17 @@
+{
+  "name": "PWA Rutas",
+  "short_name": "Rutas",
+  "background_color": "#0bacb9",
+  "theme_color": "#0bacb9",
+  "display": "standalone",
+  "Scope": "/",
+  "start_url": "index.html?homescreen=1",
+  "icons": [{
+    "src": "assets/512x512.svg",
+    "sizes": "512x512",
+    "type": "image/png"
+}],
+  "splash_pages": null,
+  "orientation": "portrait"
+
+}
