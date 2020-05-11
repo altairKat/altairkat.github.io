@@ -295,6 +295,9 @@ $(function () {
                         block.style.height = (window.innerHeight * 0.40) + "px";
 
                     } else {
+                        $("html").css({
+                            "touch-action": "pan-down"
+                        });
                         console.log('down');
 
                         block.style.height = (window.innerHeight * 0.96) + "px";
