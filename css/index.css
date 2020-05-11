@@ -900,17 +900,17 @@ body {
   
   .slider {
 	touch-action: "pan-down";
-   width: 100%;
-	  height: 12px;
+   	width: 100%;
+	height: 12px;
 	text-align: center;
 	letter-spacing: 10px;
-   /* background-color: #dee2e6;**/
 	cursor: row-resize;
 	user-select: none; 
 	z-index: 111111111111113;
     position: absolute;
   }
   .slider1{
+	touch-action: "pan-down";
 	text-align: center;
 	background-color: #0f8e98;
 	border: 1px solid #e0e0e0;
