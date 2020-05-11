@@ -29,7 +29,8 @@ a {
 .input-page-wrapper {
 	height: calc(100vh - 48px);
 	padding: 24px;
-	overflow: hidden
+	overflow: hidden;
+	touch-action: auto;
 }
 
 .input-page-wrapper h1.app-title {
