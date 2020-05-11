@@ -884,6 +884,7 @@ body {
   }
   
   .block-2 {
+	touch-action: "pan-down";
     background-color: white;
     flex: 1;
     min-height: 0;
@@ -898,6 +899,7 @@ body {
   }
   
   .slider {
+	touch-action: "pan-down";
    width: 100%;
 	  height: 12px;
 	text-align: center;
