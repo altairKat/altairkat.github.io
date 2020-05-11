@@ -253,7 +253,13 @@ $(function () {
             // at least 100 px are a swipe
             // you can use the value relative to screen size: window.innerWidth * .1
             const offset = 100;
-            let xDown, yDown
+            let xDown, yDown;
+
+            block2.addEventListener('touchstart', e => {
+                $("html").css({
+                    "touch-action": "pan-down"
+                });
+            });
 
             slider.addEventListener('touchstart', e => {
                 const firstTouch = getTouch(e);
@@ -295,9 +301,7 @@ $(function () {
                         block.style.height = (window.innerHeight * 0.40) + "px";
 
                     } else {
-                        $("html").css({
-                            "touch-action": "pan-down"
-                        });
+                       
                         console.log('down');
 
                         block.style.height = (window.innerHeight * 0.96) + "px";
