@@ -1,0 +1,126 @@
+.leyendaImg {
+  margin: 0.5rem;
+}
+
+button.btn-settings {
+  margin: 25px;
+  padding: 20px 30px;
+  font-size: 1.2em;
+  background-color: #337ab7;
+  color: white;
+}
+
+button.btn-settings:active {
+  color: white;
+}
+
+.modal {
+  overflow: hidden;
+}
+
+.modal-dialog {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.modal-header {
+  height: 40px;
+  padding: 20px;
+  /* background-color:#18456b; */
+  color: #18456b;
+}
+
+.modal-title {
+  margin-top: -10px;
+  font-size: 16px;
+}
+
+.modal-header .close {
+  margin-top: -10px;
+  color: #18456b;
+}
+
+.modal-body {
+  color: #888;
+  padding: 5px 35px 20px;
+}
+
+.modal-body h3 {
+  text-align: center;
+}
+
+.modal-body p {
+  padding-top: 10px;
+  font-size: 1.1em;
+}
+
+.modal-content {
+  width: 25rem;
+  height: 35rem;
+}
+
+
+
+
+#leyendaTabla {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+#leyendaTabla td,
+#leyendaTabla th {
+  padding: 8px;
+  background-color: #ffffff;
+
+}
+
+/* #leyendaTabla tr:nth-child(even){background-color: #ffffff;}
+
+#leyendaTabla tr:hover {background-color: rgb(255, 255, 255);} */
+
+
+
+#leyendaTabla .tituloServicio {
+  border-left: 6px solid rgb(7, 92, 189);
+  border-bottom: 2px solid rgb(7, 7, 7);
+  /* background-color: rgb(236, 235, 235); */
+  width: 100%;
+}
+
+
+#leyendaTablaSub_K, #leyendaTablaSub_VF, #leyendaTablaSub_RV, #leyendaTablaSub_UF{
+  /* border-left:6px solid rgb(182, 4, 4);
+  border-bottom: 2px solid rgb(7, 7, 7); */
+  width: 100%;
+} 
+
+#leyendaTablaSub_K  table>tbody>tr>th,
+ #leyendaTablaSub_VF table>tbody>tr>th,
+  #leyendaTablaSub_RV table>tbody>tr>th,
+   #leyendaTablaSub_UF table>tbody>tr>th{
+  display: block !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: rgb(7, 7, 7);
+  line-height: 15px;
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
+  padding-left: 0.625rem;
+}
+
+
+#leyendaTablaSub_K th,
+ #leyendaTablaSub_VF th,
+  #leyendaTablaSub_RV th,
+   #leyendaTablaSub_UF th{
+  border-left: 6px solid  #428bca;
+  border-bottom: 2px solid rgb(7, 7, 7);
+  background-color: rgb(236, 235, 235);
+  padding-bottom: 0.625rem;
+  width: 100%;
+  color: rgb(5, 5, 5);
+  text-transform: none;
+  text-decoration: none;
+
+}
