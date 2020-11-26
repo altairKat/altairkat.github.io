@@ -868,13 +868,22 @@ function obtenerGEOJSON(filters, nombreGeoJSON) {
     switch (nombreGeoJSON) {
         case "Catalogo_Parcelas_Total_eva":
             if (Catalogo_Parcelas_Total_eva == undefined) {
-                var request = new XMLHttpRequest();
+                /*var request = new XMLHttpRequest();
                 request.open("GET", "src/data/geojson/" + nombreGeoJSON + ".geojson", false);
                 request.send(null)
-                Catalogo_Parcelas_Total_eva = JSON.parse(request.responseText);
-              
+                Catalogo_Parcelas_Total_eva = JSON.parse(request.responseText);*/
+                url = 'src/data/geojson/Catalogo_Parcelas_Total_eva.geojson';
+                fetch(url)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (json) {
+                    Catalogo_Parcelas_Total_eva = json;
+                    
+                });
+                console.log(Catalogo_Parcelas_Total_eva)
             }
-            // console.log(Catalogo_Parcelas_Total_eva)
+            
 
             consultaJson = JSON.parse(JSON.stringify(Catalogo_Parcelas_Total_eva));
             break;
