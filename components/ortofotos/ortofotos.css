@@ -1,5 +1,0 @@
-
-/*PARA NO MOSTRAR EL CONTROL DE CAPAS BASE*/
-#layers .group.layer-switcher-base-group{
-  display:none!important;
-}
