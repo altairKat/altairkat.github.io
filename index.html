@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>Visor de Openlayer</title>
+    <link rel="stylesheet" href="src/css/preload.css" />
+    <link rel="stylesheet" href="src/css/ol/ol.css" />
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" /> -->
+    <link rel="stylesheet" href="src/css/bootstrap_3.2.0/bootstrap.min.css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+    
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <script src="src/js/jquery-2.1.1.min.js"></script>
+    <script src="src/js/jquery-ui.min.js"></script>
+    <script src="src/js/w3.js"></script>
+    <script src="./main.js"></script>
+    <script src="./configuracion.js"></script>
+    
+    <link rel="stylesheet" href="src/css/medias.queries.css"/>
+    <!-- icono -->
+    <link type="image/x-icon" href="assets/images/icono.ico" rel="icon" />
+    
+    
+    <!-- sidebar -Control de capas -->
+    <link rel="stylesheet" href="https://openlayers.org/en/v6.1.1/css/ol.css" />
+   
+
+    <!-- arbol -->
+    <link rel="stylesheet" href="src/css/treejs.css">
+
+    <!-- jspanel -->
+    <link rel="stylesheet" href="src/css/jspanel/jspanel.css">
+ 
+    
+    <!-- slider -->
+    <link rel="stylesheet" href="src/css/check.css">
+
+    <!-- slider range -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" type="text/css" media="all" />
+    <link rel="stylesheet" type="text/css" href="src/css/range/range_style.css" />
+
+    <!-- tabulator -->
+    <!-- <link rel="stylesheet" href="src/css/tabulator/tabulator.css"> -->
+    <link rel="stylesheet" href="src/css/tabulator/tabulator.min.css">
+   
+    
+</head>
+
+<body>
+    <div class="loadBackgroud"> </div>   
+    <div class="load">
+        <hr/><hr/><hr/><hr/> 
+      
+    </div>
+    
+
+    <div class="container">
+        <!-- MENU -->
+        <nav class="navbar navbar-fixed-top navbar-default" role="navigation">
+            <div class="container-fluid">
+                <!-- Agrupamos el botón de toggle y la parte del nombre de aplicación para que se pueda mostrar bien en el móvil -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="fa fa-bars"></span>
+
+                    </button>
+                      <!-- Brand/logo -->
+                    <a class="navbar-brand" href="#">
+                        <img src="assets/images/icono.ico" alt="logo" >
+                    </a>
+                    <a class="navbar-brand" href="#" data-i18n="TITULO_PROYECTO">Catalogación Terrenos Rurales</a>
+                    
+                </div>
+
+                <!-- Une el contenido para toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul id="idioma" class="nav navbar-nav navbar-right">
+                        <li><a href="#" id="eu" class="idioma"  title="eu"> EU</a></li>
+                        <li><a href="#" id="es" class="idioma active" title="es">ES</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="navbar-offset"></div>
+    
+    <!-- div que contiene el  mapa  -->
+    <div id="map" class="sidebar-map"></div>
+  
+    <!-- <select id="units">
+      <option value="degrees">degrees</option>
+      <option value="imperial">imperial inch</option>
+      <option value="us">us inch</option>
+      <option value="nautical">nautical mile</option>
+      <option value="metric" selected>metric</option>
+    </select>
+
+    <select id="type">
+      <option value="scaleline">ScaleLine</option>
+      <option value="scalebar">ScaleBar</option>
+    </select>
+
+    <select id="steps" style="display:none">
+      <option value=2>2 steps</option>
+      <option value=4 selected>4 steps</option>
+      <option value=6>6 steps</option>
+      <option value=8>8 steps</option>
+    </select> -->
+
+    <div id="showScaleTextDiv" style="display:none">
+      <input type="checkbox" id="showScaleText" checked>Show scale text
+    </div>
+
+    <!-- componentes a cargar  -->
+    <div id="componetes">
+        <component name="map"></component>
+        <component name="consulta"  style="display: none;"></component>
+        <component name="menu"></component>
+        <component name="controlCapas"></component>
+        <component name="leyenda"></component>
+        <component name="tabla"></component>
+        <component name="informacion"></component>
+        <component name="consultasPredeterminadas"></component>
+        <component name="ortofotos"></component>
+        
+    </div>
+
+    <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
+    <script
+        src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL">
+    </script>
+
+    <!-- DESCARGAR IMAGEN  -->
+    <!-- <script src="src/js/print/dom-to-image.js"></script>
+    <script src="src/js/print/dom-to-image.min.js"></script> -->
+    <script src="src/js/print/dom-to-image-more.min.js"></script>
+    <script src="src/js/pdfmaker/pdfmake.min.js"></script>
+    <script src="src/js/pdfmaker/vfs_fonts.js"></script>
+   
+
+    <!-- sidebar -Control de capas -->
+    
+    <script src="https://openlayers.org/en/v6.1.1/build/ol.js"></script>
+    <!-- <script src="src/js/ol/ol.js"></script> -->
+ 
+
+    <!-- arbol -->
+    <script src="src/js/treejs/tree.min.js"></script>
+   
+
+    <!-- jspanel -->
+    
+    <script src="src/js/jspanel/jspanel.js"></script>
+    <script src="src/js/jspanel/extensions/modal/jspanel.modal.js"></script>
+    <script src="src/js/jspanel/extensions/tooltip/jspanel.tooltip.js"></script>
+    <script src="src/js/configPaneles.js"></script>
+    
+  
+
+    <!-- slider range -->
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="src/js/range/range_script.js" type="text/javascript"></script>
+  
+
+    <!-- tabulator -->
+   
+  
+    <script src="src/js/tabulator/tabulator.min.js"></script>
+    <script src="src/js/tabulator/group_rows.js"></script>
+    <!-- Descarga PDF -->
+    <script src="src/js/tabulator/jspdf.min.js"></script>
+    <script src="src/js/tabulator/jspdf.plugin.autotable.min.js"></script>
+
+    <!-- Descarga xlsx -->
+    <script type="text/javascript" src="src/js/descargas/xlsx.full.min.js"></script>
+ 
+
+    <!-- idioma -->
+    <!-- <script src="src/js/translate.js"></script> -->
+    <script src="src/js/i18next-1.6.3.min.js"></script>
+    <script src="src/js/idioma.js"></script>
+</body>
+
+</html>

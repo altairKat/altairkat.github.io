@@ -1,0 +1,1 @@
+Funciona el sidebar y el control de capas. SE añade la estructura con componentes y el menu. Pero no encaja bien el menu con el mapa. Quedando este por debajo. 
