@@ -223,10 +223,11 @@ function cargarModales() {
 
     //PANEL DE CONTROL DE CAPAS 
     $("#btnControlCapas").click(function () {
-        // $("#controlCapasComponente").append('<div id="layers" class="layer-switcher"></div>');
+      
         $("#controlCapasComponente").append('<div id="divControlCapas"> </div>');
-        controlDeCapas();
+       
         if (panelControlCapas == undefined) {
+            controlDeCapas();
             panelControlCapas = jsPanel.create({
                 id: "panelControlCapas",
                 theme: 'primary',
@@ -235,12 +236,7 @@ function cargarModales() {
                     maximize: 'remove'
                 },
                 position: 'center-top -40 110',
-                // position: {
-                //     my: "right-center",
-                //     at: "right-center",
-                //     offsetX: -10,
-                //     offsetY: -150
-                //   },
+                
                 panelSize: {
                     width: 360,
                     height: '38em'
@@ -263,10 +259,9 @@ function cargarModales() {
             });
             addEtiquetaNombreIdioma();
             cambiarIdioma(currentLng);
-            // $("#layers .group.layer-switcher-base-group").hide();
-            // $("#layers .group.layer-switcher-base-group").css("display", "none")
         } else {
             panelControlCapas.normalize();
+            
         }
 
     });

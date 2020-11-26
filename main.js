@@ -86,10 +86,18 @@ function cambiarIdiomaA() {
 }
 
 function cargarPlaneamiento() {
-  capaSubParcelaTotal = obtenerSubParcelaLayer()
-  capaParcelaTotal = obtenerParcelaLayer();
-  map.addLayer(capaSubParcelaTotal);
-  map.addLayer(capaParcelaTotal);
+  obtenerParcelaLayer().then(capaParcelaTotal => {
+    console.log(capaParcelaTotal);
+    map.addLayer(capaParcelaTotal);
+  });
+
+   obtenerSubParcelaLayer().then(capaSubParcelaTotal => {
+    console.log(capaSubParcelaTotal);
+    map.addLayer(capaSubParcelaTotal);
+  });
+ 
+ 
+  
   
   iniciandasCapasPS=true;
 }

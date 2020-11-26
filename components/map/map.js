@@ -313,8 +313,10 @@ function controlesMapa() {
   //EXTENCION A URKIOLA
   var ext = new ol.control.ZoomToExtent({
     extent: [
-      -305531.45447928325, 5325968.666454764,
-      -287862.8857595083, 5338968.547312366
+      -325597.6536259576, 5321515.718105084,
+      -261428.76838055212, 5357326.465856689
+      /*-305531.45447928325, 5325968.666454764,
+      -287862.8857595083, 5338968.547312366*/
     ]
   })
   map.addControl(ext);
@@ -353,174 +355,194 @@ function scaleControl() {
   return control;
 }
 
-function obtenerParcelaLayer(){
+function obtenerParcelaLayer() {
   var consultaJson;
   filtradas = [];
-  filters=[];
-  consultaJson = obtenerGEOJSON(filters,"Catalogo_Parcelas_Total_eva");
-  geojsonConsulta = consultaJson;
- 
+  filters = [];
+  //consultaJson = obtenerGEOJSON(filters,"Catalogo_Parcelas_Total_eva");
+  //geojsonConsulta = consultaJson;
+  url = 'src/data/geojson/Catalogo_Parcelas_Total_eva.geojson';
+  return fetch(url)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (json) {
+      consultaJson = json;
 
-  
 
-  highlightStyle = new ol.style.Style({
-      stroke: new ol.style.Stroke({
+
+      highlightStyle = new ol.style.Style({
+        stroke: new ol.style.Stroke({
           color: '#f508f9',
           width: 1
-      }),
-      fill: new ol.style.Fill({
-          color: 'rgba(245, 8, 249,0.2)'
-      })
-  });
-
-
-  var styleFunction = function (feature,resolution) {
-   
-    var styleA = new ol.style.Style({
-      fill: new ol.style.Fill({
-          color: 'rgba(216, 87, 12, 0.1)'
-      }),
-      stroke: new ol.style.Stroke({
-          color: 'rgb(216, 87, 12)',
-          width: 1
-      }),
-      //text: createTextStyle(feature, resolution )
-      text: new ol.style.Text({
-        font: '12px Calibri,sans-serif',
-        fill: new ol.style.Fill({
-          color: '#000'
         }),
-        stroke: new ol.style.Stroke({
-          color: '#fff',
-          width: 3
+        fill: new ol.style.Fill({
+          color: 'rgba(245, 8, 249,0.2)'
         })
-      })
-  });
+      });
 
-var parcelaPoligono=feature.get('MUNICIPIO')+"-"+feature.get('POLIGONO')+"-"+feature.get('PARCELA');
-  styleA.getText().setText(parcelaPoligono);
-  
-      return styleA;
-  };
-  //console.log(consultaJson)
-  var vectorSource = new ol.source.Vector({
-      features: (new ol.format.GeoJSON()).readFeatures(consultaJson, {
+
+      var styleFunction = function (feature, resolution) {
+
+        var styleA = new ol.style.Style({
+          fill: new ol.style.Fill({
+            color: 'rgba(216, 87, 12, 0.1)'
+          }),
+          stroke: new ol.style.Stroke({
+            color: 'rgb(216, 87, 12)',
+            width: 1
+          }),
+          //text: createTextStyle(feature, resolution )
+          text: new ol.style.Text({
+            font: '12px Calibri,sans-serif',
+            fill: new ol.style.Fill({
+              color: '#000'
+            }),
+            stroke: new ol.style.Stroke({
+              color: '#fff',
+              width: 3
+            })
+          })
+        });
+
+        var parcelaPoligono = feature.get('MUNICIPIO') + "-" + feature.get('POLIGONO') + "-" + feature.get('PARCELA');
+        styleA.getText().setText(parcelaPoligono);
+
+        return styleA;
+      };
+      //console.log(consultaJson)
+      var vectorSource = new ol.source.Vector({
+        features: (new ol.format.GeoJSON()).readFeatures(consultaJson, {
           dataProjection: 'EPSG:4326',
           featureProjection: 'EPSG:3857'
-      }),
-      minZoom: zoomMinParcela,
-    maxZoom: zoomMaxParcela,
+        }),
+        minZoom: zoomMinParcela,
+        maxZoom: zoomMaxParcela,
 
-  });
+      });
 
-  vectorLayer2 = new ol.layer.Vector({
-    minZoom: zoomMinParcela,
-    maxZoom: zoomMaxParcela,
-     'title': 'Planeamiento',
-      source: vectorSource,
-      style: styleFunction,
-      visible: false
-  });
+      capaParcelaTotal = new ol.layer.Vector({
+        minZoom: zoomMinParcela,
+        maxZoom: zoomMaxParcela,
+        'title': 'Planeamiento',
+        source: vectorSource,
+        style: styleFunction,
+        visible: false
+      });
 
-  featureOverlay = new ol.layer.Vector({
-    source: new ol.source.Vector(),
-    map: map,
-    style: function (feature) {
-        return highlightStyle;
-    }
-});
+      featureOverlay = new ol.layer.Vector({
+        source: new ol.source.Vector(),
+        map: map,
+        style: function (feature) {
+          return highlightStyle;
+        }
+      });
+      
+
+      return capaParcelaTotal;
+    })
+
+
+  //console.log(capaParcelaTotal)
   
-  //map.addLayer(vectorLayer2);
 
-return vectorLayer2;
- 
 
 }
 //para las parcela: MUNICIPIO-POLIGONO-PARCELA
 //para las subparcela: MINICIPIO-POLIGONO-PARCELA-SUBPARCELA
-function obtenerSubParcelaLayer(){
+function obtenerSubParcelaLayer() {
   var consultaJson;
   filtradas = [];
-  filters=[];
-  consultaJson = obtenerGEOJSON(filters,"Catalogo_subparcelas");
-  geojsonConsulta = consultaJson;
- 
-
-  
-
-  highlightStyle = new ol.style.Style({
-      stroke: new ol.style.Stroke({
+  filters = [];
+  //consultaJson = obtenerGEOJSON(filters,"Catalogo_subparcelas");
+  var cargado;
+  url = 'src/data/geojson/Catalogo_subparcelas.geojson';
+  return fetch(url)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (json) {
+      consultaJson = json;
+      highlightStyle = new ol.style.Style({
+        stroke: new ol.style.Stroke({
           color: '#f508f9',
           width: 1
-      }),
-      fill: new ol.style.Fill({
-          color: 'rgba(245, 8, 249,0.2)'
-      })
-  });
-
-
-  var styleFunction = function (feature,resolution) {
-  
-    var styleA = new ol.style.Style({
-      fill: new ol.style.Fill({
-          color: 'rgba(59, 222, 200, 0.3)'
-      }),
-      stroke: new ol.style.Stroke({
-          color: 'rgb(59, 222, 200)',
-          width: 1
-      }),
-      //text: createTextStyle(feature, resolution )
-      text: new ol.style.Text({
-        font: '9px Calibri,sans-serif',
-        fill: new ol.style.Fill({
-          color: '#000'
         }),
-        stroke: new ol.style.Stroke({
-          color: '#fbf092',
-          width: 3
+        fill: new ol.style.Fill({
+          color: 'rgba(245, 8, 249,0.2)'
         })
-      })
+      });
 
-     
-  });
-  
-var parcelaPoligono=feature.get('MUNICIPIO')+"-"+feature.get('POLIGONO')+"-"+feature.get('PARCELA')+"-"+feature.get('RECINTO');
-  styleA.getText().setText(parcelaPoligono);
-  styleA.getText().setOffsetY(15);
-  //styleA.getText().setTextBaseline('top');
-      return styleA;
-  };
-  //console.log(consultaJson)
-  var vectorSource = new ol.source.Vector({
-      features: (new ol.format.GeoJSON()).readFeatures(consultaJson, {
+
+      var styleFunction = function (feature, resolution) {
+
+        var styleA = new ol.style.Style({
+          fill: new ol.style.Fill({
+            color: 'rgba(59, 222, 200, 0.3)'
+          }),
+          stroke: new ol.style.Stroke({
+            color: 'rgb(59, 222, 200)',
+            width: 1
+          }),
+          //text: createTextStyle(feature, resolution )
+          text: new ol.style.Text({
+            font: '9px Calibri,sans-serif',
+            fill: new ol.style.Fill({
+              color: '#000'
+            }),
+            stroke: new ol.style.Stroke({
+              color: '#fbf092',
+              width: 3
+            })
+          })
+
+
+        });
+
+        var parcelaPoligono = feature.get('MUNICIPIO') + "-" + feature.get('POLIGONO') + "-" + feature.get('PARCELA') + "-" + feature.get('RECINTO');
+        styleA.getText().setText(parcelaPoligono);
+        styleA.getText().setOffsetY(15);
+        //styleA.getText().setTextBaseline('top');
+        return styleA;
+      };
+      //console.log(consultaJson)
+      var vectorSource = new ol.source.Vector({
+        features: (new ol.format.GeoJSON()).readFeatures(consultaJson, {
           dataProjection: 'EPSG:4326',
           featureProjection: 'EPSG:3857'
-      }),
-      minZoom: zoomMinParcela,
-    maxZoom: zoomMaxParcela,
-  });
+        }),
+        minZoom: zoomMinParcela,
+        maxZoom: zoomMaxParcela,
+      });
 
-  vectorLayer2 = new ol.layer.Vector({
-     'title': 'Planeamiento',
-      source: vectorSource,
-      style: styleFunction,
-      visible: false,
-      minZoom: zoomMinParcela,
-    maxZoom: zoomMaxParcela,
-  });
+      capaSubParcelaTotal = new ol.layer.Vector({
+        'title': 'Planeamiento',
+        source: vectorSource,
+        style: styleFunction,
+        visible: false,
+        minZoom: zoomMinParcela,
+        maxZoom: zoomMaxParcela,
+      });
 
- featureOverlay = new ol.layer.Vector({
+      featureOverlay = new ol.layer.Vector({
         source: new ol.source.Vector(),
         map: map,
         style: function (feature) {
-            return highlightStyle;
+          return highlightStyle;
         }
-    });
+      });
+
+      return capaSubParcelaTotal;
+    })
+    
   //map.addLayer(vectorLayer2);
 
  return vectorLayer2;
 
 }
+
+
+
 function capaMunicipios() {
   wmsMunicipios = new ol.source.ImageWMS({
     url: "https://www.geo.euskadi.eus/WMS_NEKAZARITZA/wms", //?request=GetCapabilities&service=WMS",
