@@ -1,0 +1,65 @@
+#contenido {
+    margin: 1rem;
+}
+
+.nav-link.active {
+    border: 1px solid #00000038 !important;
+    background: #01599d;
+    color: white;
+}
+/*boton Consulta*/
+.btn-primary {
+  color: #fff;
+  background-color: #01599d!important;
+ 
+}
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    color: #fff;
+    background-color:#01599d;
+    border-color: #dee2e6 #dee2e6 #fff
+}
+
+/*Estilos dropdown del menu incorporado dentro del input*/
+.dropdown-menu>li>a {
+    padding: 1px 13px;
+}
+.open>.dropdown-menu {
+    display: flex!important;
+}
+
+
+
+.consultaLabel {
+    margin-top: 0.5rem;
+}
+/* .custom-range{
+    margin-top: 1rem;
+} */
+
+
+/* Estilos del radioButton y del checkbox en check.css */
+.form-control {
+    font-size: 12px!important;
+    height: 30px;
+}
+
+/*Estilos de tabla*/
+/*#table{
+  height: 13rem!important;
+}*/
+
+/*BUTTON consulta y limpiar*/
+.btnConsulta{
+    margin: 0 auto;
+    display: line;
+    margin-top: 1rem;
+    margin: 0.5rem;
+}
+/* .botones{
+    width: 21%;
+    margin: 0 auto;
+} */
+.pie{
+    width: 100%;
+}
