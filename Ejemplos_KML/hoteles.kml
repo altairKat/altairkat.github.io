@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document id="Hoteles">
+  <name>Hoteles</name>
+  <Snippet></Snippet>
+  <Folder id="Hoteles">
+    <name>Hoteles</name>
+  	<Snippet></Snippet>
+    
+    <Placemark id="hotel_maria_cristina">
+      <name>Hotel Maria Cristina</name>
+      <styleUrl>#hotel</styleUrl>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format">
+		<body>
+      		<!--h2>Hotel Maria Cristina</h2-->
+      		Calle Republica Argentina, 4 (Donostia-San Sebastian)
+      		</br>
+      		<br/>
+      		<img src=/sidl/img/hotel-cristina.png></img>
+		</body>
+      </html>
+      ]]></description>
+      <Point>
+        <extrude>0</extrude>
+        <altitudeMode>relativeToGround</altitudeMode>
+        <!--coordinates>582701.19152461, 4797052.17839165</coordinates-->
+		<coordinates>-1.98003026872671, 43.321763601135274</coordinates>
+      </Point>
+    </Placemark>
+    
+    <Placemark id="hotel_lakua">
+      <name>Hotel Lakua</name>
+      <styleUrl>#hotel</styleUrl>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format">
+		<body>
+      		<!--h2>Hotel Lakua</h2-->
+      		Calle Tarragona, 8 (Vitoria-Gasteiz)
+      		</br>
+      		<br/>
+      		<img src=/sidl/img/hotel-lakua.png></img>
+		</body>
+      </html>
+      ]]></description>
+      <Point>
+        <extrude>0</extrude>
+        <altitudeMode>relativeToGround</altitudeMode>
+        <!--coordinates>525371.062384088, 4746299.82181085</coordinates-->
+		<coordinates>-2.6893903444412928, 42.86886851806195</coordinates>
+      </Point>
+    </Placemark>
+    
+    <Placemark id="hotel_ercila">
+      <name>Hotel Ercilla</name>
+      <styleUrl>#hotel</styleUrl>
+      <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format">
+		<body>
+      		<!--h2>Hotel Ercilla</h2-->
+      		Calle Ercilla, 37 (Bilbao)
+      		</br>
+      		<br/>
+      		<img src=/sidl/img/hotel-ercilla.png></img>
+		</body>
+      </html>
+      ]]></description>
+      <Point>
+        <extrude>0</extrude>
+        <altitudeMode>relativeToGround</altitudeMode>
+        <!--coordinates>504981.201592105, 4789812.02856377</coordinates-->
+		<coordinates>-2.9386267144026395, 43.26110026244814</coordinates>
+      </Point>
+    </Placemark>
+	
+	
+	
+  </Folder>
+
+  
+  
+  <Style id="hotel">
+    <IconStyle>
+      <!--<Icon><href>http://www.geo.euskadi.ejiedes.net/sidl/img/markers/marker-hotel.png</href></Icon>-->
+      <Icon><href>http://upload.wikimedia.org/wikipedia/commons/b/b1/Map_marker_icon_%E2%80%93_Nicolas_Mollet_%E2%80%93_Hotel_%E2%80%93_Restaurants_%26_Hotels_%E2%80%93_iOS.png</href></Icon>
+      <scale>1</scale>
+      <hotSpot x="0.5" y="0.5" xunits="fraction" yunits="fraction"></hotSpot>
+    </IconStyle>
+    <LabelStyle>
+      <color>00000000</color>
+      <scale>0.000000</scale>
+    </LabelStyle>
+  </Style>
+  
+ 
+</Document>
+</kml>
