@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<kml xmlns="http://earth.google.com/kml/2.0"> <Document>
+
+<Style id="My_Style">
+ <IconStyle> <Icon> <href>ball.png</href> </Icon></IconStyle>
+</Style> 
+
+<Placemark>
+ <name> New point</name> 
+ <description>This is a new point to learn KML format.</description>
+ <styleUrl> #My_Style</styleUrl> 
+ <Point>
+  <coordinates>
+   135.2, 35.4, 0.
+  </coordinates>
+ </Point> 
+</Placemark>
+
+</Document> </kml>

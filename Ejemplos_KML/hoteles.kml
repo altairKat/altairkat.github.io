@@ -70,16 +70,16 @@
       </Point>
     </Placemark>
 	
-	<Placemark id="hotel_2">
-      <name>Hotel </name>
+ <Placemark id="hotel_ercila1">
+      <name>Hotel Ercilla1</name>
       <styleUrl>#hotel</styleUrl>
       <description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format">
 		<body>
-      		<!--h2>Hotel </h2-->
+      		<!--h2>Hotel Ercilla</h2-->
       		Calle Ercilla, 37 (Bilbao)
       		</br>
       		<br/>
-      		
+      		<img src=/sidl/img/hotel-ercilla.png></img>
 		</body>
       </html>
       ]]></description>
@@ -87,7 +87,7 @@
         <extrude>0</extrude>
         <altitudeMode>relativeToGround</altitudeMode>
         <!--coordinates>504981.201592105, 4789812.02856377</coordinates-->
-		<coordinates>-2.661147553206122,43.13829821259888,0</coordinates>
+		<coordinates>-2.9436267144026395, 43.26510026244814</coordinates>
       </Point>
     </Placemark>
 	
