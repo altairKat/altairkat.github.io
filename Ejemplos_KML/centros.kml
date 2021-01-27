@@ -9,7 +9,7 @@
     <Snippet></Snippet>
     <Placemark id="ID_00000">
       <name>EIC MAÑARIAKO HAURRESKOLA PHE</name>
-      <Snippet></Snippet>
+     
       <description></description>
       <styleUrl>#IconStyle00</styleUrl>
       <!--MultiGeometry-->
@@ -1954,7 +1954,7 @@
       <name>EIC URDULIZKO HAURRESKOLA PHE</name>
       <Snippet></Snippet>
       <description>PRUEBA 2</description>
-      <styleUrl>#IconStyle00</styleUrl>
+      <styleUrl>#IconStyle042</styleUrl>
       <!--MultiGeometry-->
         <Point>
         <altitudeMode>clampToGround</altitudeMode>
@@ -1965,7 +1965,7 @@
   </Folder>
   <Style id="IconStyle00">
     <IconStyle>
-      <Icon><href>/bisorea/legend/Educacion/Centros Educativos/icons/centro_escolar.png</href></Icon>
+      <Icon><href>https://cdn.iconscout.com/icon/premium/png-256-thumb/school-526-827039.png</href></Icon>
 	  <hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
       <scale>1.000000</scale>
     </IconStyle>
@@ -1980,7 +1980,7 @@
   </Style>
   <Style id="IconStyle042">
     <IconStyle>
-      <Icon><href>/bisorea/legend/Educacion/Centros Educativos/icons/centro_apoyo.png</href></Icon>
+      <Icon><href>https://cdn.iconscout.com/icon/premium/png-256-thumb/school-526-827039.png</href></Icon>
 	  <hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
       <scale>1.000000</scale>
     </IconStyle>
